@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        IMAGENAME = "devopsyolujenkins"
-        AWS = "847413486587"
-        AWSREGION = "eu-central-1"
+        IMAGENAME = "D-Aviator"
+        AWS = "123456789012"
+        AWSREGION = "us-east-1"
 
     } 
     stages {
