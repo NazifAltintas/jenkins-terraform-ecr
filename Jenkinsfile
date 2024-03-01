@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IMAGENAME = "demoaviatorjenkins"
-        AWS = "518750583730"
+        AWS = "123456789012"
         AWSREGION = "us-east-1"
 
     } 
