@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "devopsyolujenkins" {
+resource "aws_ecr_repository" "demoaviatorjenkins" {
   name = "devopsyolujenkins"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
