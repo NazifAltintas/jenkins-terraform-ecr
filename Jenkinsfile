@@ -27,12 +27,17 @@ pipeline {
                 sh 'terraform output'        
             }
         }
-        stage('Push') { 
+        stage('Push') {
             steps {
-               
-                sh 'docker push ${AWS}.dkr.ecr.${AWSREGION}.amazonaws.com/${IMAGENAME}:lts'
-                
+                script {
+            // Docker'a Amazon ECR'e giriş yap
+            sh "aws ecr get-login-password --region ${AWSREGION} | docker login --username AWS --password-stdin ${AWS}.dkr.ecr.${AWSREGION}.amazonaws.com"
+
+            // Docker imajını Amazon ECR'e gönder
+            sh "docker push ${AWS}.dkr.ecr.${AWSREGION}.amazonaws.com/${IMAGENAME}:lts"
+                }
             }
         }
+
     }
 }
